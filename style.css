@@ -1,91 +1,134 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     outline: 0;
 }
 
-body{
+body {
     overflow: hidden;
+    width: 100%;
+    height: 100%;
 }
-.calculator{
+
+.calculator {
     width: 100vw;
     height: 100vh;
     display: flex;
     flex-direction: column;
-    /* background: linear-gradient(0deg, rgba(45,71,71,1) 0%, rgba(110,86,79,0.44861694677871145) 100%); */
-    /* background-color: bisque; */
     justify-content: center;
     align-items: center;
     background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
 }
-form{
-    width: 30vw;
-    height: 90vh;
+
+form {
+    width: 80%;
+    max-width: 400px;
+    height: auto;
     display: flex;
     flex-direction: column;
-    margin-top: 30px;
+    margin-top: 20px;
     align-items: center;
-    background-color:black;
-    /* background-color: background: rgb(45,71,71); */
-    /* background: linear-gradient(0deg, rgba(45,71,71,1) 0%, rgba(110,86,79,0.44861694677871145) 100%); */
-    border-radius: 30px;
+    background-color: black;
+    border-radius: 15px;
     border: none;
 }
-form:hover{
-    
+
+form:hover {
     box-shadow: 0 8px 8px -4px rgb(238, 223, 62);
 }
-form>h3{
-    font-size: 16px;
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+form > h3 {
+    font-size: 1.2rem;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-weight: 600;
-    color:lightgrey;
-    padding: 10px 0px 10px 0px;
+    color: lightgrey;
+    padding: 10px;
 }
-form>.screen{
-    /* margin-top: 20px; */
-    width: 100%;
-    height: 100px;
-    background-color:transparent;
-    /* background: linear-gradient(0deg, rgba(45,71,71,1) 0%, rgba(110,86,79,0.44861694677871145) 100%); */
+
+form > .screen {
+    width: 90%;
+    max-width: 300px;
+    height: 80px;
+    backdrop-filter: blur(10px);
+    background-color: rgba(255,255,255,0.06);
+    /* background-color: transparent; */
     display: flex;
-    /* flex-direction: column;
-    align-items: center; */
-    border-radius: 20px;
     justify-content: center;
+    border-radius: 20px;
+    margin-bottom: 10px;
 }
-form>.screen>input{
-    width:300px;
+
+form > .screen > input {
+    width: 100%;
     height: auto;
     border-radius: 20px;
     border: none;
-    font-size: 30px;
+    font-size: 2rem;
     text-align: right;
+    backdrop-filter: blur(10px);
+    background-color: rgba(241, 236, 236, 0.733);
 }
-form>.buttons{
-    background-color:transparent;
+
+form > .buttons {
+    background-color: transparent;
     display: flex;
+    flex-wrap: wrap;
     gap: 10px;
-    width: 70%;
-    height: 100px;
+    width: 90%;
+    max-width: 300px;
     justify-content: center;
-    padding: 15px 0px 10px 0px;
+    padding: 10px;
 }
-.buttons>input{
+
+.buttons > input {
     width: 60px;
     height: 60px;
     border-radius: 20px;
     cursor: pointer;
     border: none;
-    font-size: 16px;
+    font-size: 1rem;
     font-weight: 600;
-    box-shadow: 0px 0px 60px rgba(red, green, blue, .2);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s, box-shadow 0.3s;
 }
 
-.buttons>input:hover{
+.buttons > input:hover {
     background: #eee;
-  box-shadow: 0 8px 8px -4px lightblue;
-
+    box-shadow: 0 8px 8px -4px lightblue;
 }
 
+/* Media Queries for responsiveness */
+@media (max-width: 768px) {
+    form {
+        width: 90%;
+        max-width: 350px;
+    }
+
+    form > .screen > input {
+        font-size: 1.2rem;
+    }
+
+    .buttons > input {
+        width: 50px;
+        height: 50px;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    form {
+        width: 95%;
+        max-width: 300px;
+    }
+
+    form > .screen > input {
+        font-size: 1rem;
+    }
+
+    .buttons > input {
+        width: 45px;
+        height: 45px;
+        font-size: 0.8rem;
+    }
+}
